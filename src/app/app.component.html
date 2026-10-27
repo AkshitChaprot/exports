@@ -1,0 +1,37 @@
+<mat-toolbar>
+    <span>My Application</span>
+</mat-toolbar>
+<mat-drawer-container class="nav-bar-container">
+<mat-drawer opened #drawer mode="side">
+    <a routerLink="/" routerLinkActive="active"><mat-icon>dashboard</mat-icon> Dashboard </a>
+    <div class="row">
+    <mat-icon> add_shopping_cart </mat-icon>
+        <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+            <mat-panel-title>
+                Items
+            </mat-panel-title>
+            </mat-expansion-panel-header>
+            <a routerLink="/" routerLinkActive="active">Item Groups<mat-icon class="add-icon-symbol">add</mat-icon></a>
+            <a routerLink="/" routerLinkActive="active">Items<mat-icon class="add-icon-symbol">add</mat-icon></a>
+            <a routerLink="/" routerLinkActive="active">Inventory Adjustments<mat-icon class="add-icon-symbol">add</mat-icon></a>
+        </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    <a routerLink="/" routerLinkActive="active"><mat-icon>person </mat-icon>Customers <mat-icon class="add-icon-symbol">add</mat-icon></a>
+    <a routerLink="/" routerLinkActive="active"><mat-icon> dashboard </mat-icon> Dashboard </a>
+    <mat-icon class="open-close" (click)="drawer.toggle()" (click)="iconbar = !iconbar">keyboard_arrow_left</mat-icon>
+</mat-drawer>
+<mat-drawer class="icon-side-nav" [opened]="iconbar">
+    <mat-icon (click)="drawer.toggle()" (click)="iconbar = !iconbar"> dashboard </mat-icon>
+    <mat-icon>add_shopping_cart</mat-icon>
+    <mat-icon>person</mat-icon>
+    <mat-icon class="open-close" (click)="drawer.toggle()" (click)="iconbar = !iconbar">keyboard_arrow_right</mat-icon>
+</mat-drawer>
+<mat-drawer-content>
+    
+</mat-drawer-content>
+</mat-drawer-container>
+  
